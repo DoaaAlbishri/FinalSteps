@@ -34,7 +34,7 @@ class PeopleViewController: UITableViewController {
                                           let personDict = person as! NSDictionary
                                           let name = personDict["name"]! as! String
                                           let gender = personDict["gender"]! as! String
-                                          let birthYear = personDict["birthYear"]! as! String
+                                          let birthYear = personDict["birth_year"]! as! String
                                           let mass = personDict["mass"]! as! String
                                           let obj = PeopleInfo(name: name, gender: gender, birthYear: birthYear, mass: mass)
                                           self.people.append(obj)
@@ -82,10 +82,10 @@ class PeopleViewController: UITableViewController {
    let gender = people[indexPath.row].gender
    let birth = people[indexPath.row].birthYear
    let mass = people[indexPath.row].mass
-        des.label1t = name
-        des.label2t = gender
-        des.label3t = birth
-        des.label4t = mass
+        des.label1t = "Name: "+name
+        des.label2t = "Gender: "+gender
+        des.label3t = "Birth year: "+birth
+        des.label4t = "Mass: "+mass
 }
 
 }

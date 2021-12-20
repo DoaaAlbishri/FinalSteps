@@ -31,9 +31,9 @@ class FilmsViewController: UITableViewController {
                                                for film in results {
                                                    let filmDict = film as! NSDictionary
                                                    let title = filmDict["title"]! as! String
-                                                   let releaseDate = filmDict["releaseDate"]! as! String
+                                                   let releaseDate = filmDict["release_date"]! as!String
                                                    let director = filmDict["director"]! as! String
-                                                   let openingCrawl = filmDict["openingCrawl"]! as! String
+                                                   let openingCrawl = filmDict["opening_crawl"]! as! String
                                                    let obj = FilmsInfo(title: title, releaseDate: releaseDate, director: director, openingCrawl: openingCrawl)
                                                    self.films.append(obj)
                                                }
@@ -73,16 +73,16 @@ class FilmsViewController: UITableViewController {
              }
              
              override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                     let des = segue.destination as! DetailsViewController
-                     let indexPath = sender as! NSIndexPath
+            let des = segue.destination as! DetailsViewController
+            let indexPath = sender as! NSIndexPath
             let title = films[indexPath.row].title
             let releasedate = films[indexPath.row].releaseDate
             let director = films[indexPath.row].director
             let openingcrawl = films[indexPath.row].openingCrawl
-                 des.label1t = title
-                 des.label2t = releasedate
-                 des.label3t = director
-                 des.label4t = openingcrawl
+                 des.label1t = "Title: "+title
+                 des.label2t = "Release date: "+releasedate
+                 des.label3t = "Director: "+director
+                 des.label4t = "Opening crawl: "+openingcrawl
         }
     }
 
